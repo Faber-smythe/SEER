@@ -1,0 +1,10 @@
+home:
+    path: /
+    controller: App\Controller\SecurityController::login_display
+    defaults:
+      newuser: ""
+logout:
+    path: /logout
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index

@@ -1,0 +1,46 @@
+#right_panel{
+  position: absolute;
+  z-index: 20;
+  right: 10px;
+  bottom: 15vh;
+  margin: 0 auto;
+  padding: 50px 30px;
+  width: 110px;
+  background: url('/images/menu_background.jpg') no-repeat center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(-20deg) rotateX(10deg);
+  color: rgb(52, 52, 49);
+}
+#right_panel>a, #right_panel hr{
+  position: relative;
+  z-index: 25;
+}
+#right_panel>a{
+  margin: 3px 0px;
+  height: 15px !important;
+}
+#right_panel img:first-of-type{
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+#right_panel img:last-of-type{
+  position: absolute;
+  z-index: 50;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+}
+.menu_link{
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.menu_sublink{
+  text-transform: capitalize;
+  white-space: nowrap;
+}

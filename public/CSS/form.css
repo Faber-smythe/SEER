@@ -1,0 +1,30 @@
+form{
+  display: flex;
+  flex-direction: column;
+}
+form label{
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+#checkbox_row{
+  display: flex;
+  align-items: center;
+}
+#checkbox_row label{
+  cursor: pointer;
+  margin: 5px 0px;
+}
+form button{
+  font-family: "printed";
+  background: transparent;
+  border: none;
+}
+form .form_submit{
+  align-self: center;
+  max-width: 75%;
+  padding: 4px;
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 45px;
+  text-transform: uppercase;
+}

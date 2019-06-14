@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+
+{% block head %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('CSS/games.css') }}">
+        {% endblock %}
+
+{% endblock %}
+{% block page_title %} {{ world.name }} {% endblock %}
+
+{% block topleft %}
+<a href="{{ path('worlds.index') }}" title="back" class='blur'>BACK</a>
+{% endblock %}
+{% block body %}
+
+    <img class="home_filigrane" src="{{ asset('images/home_filigrane_3.png') }}"></img>
+    {% if games|length == 0 %}
+      <h1>No Games yet in {{ world.name }}<span id="underscore">_</span></h1>
+    {% else %}
+      <h1>Your Games in {{ world.name }}<span id="underscore">_</span></h1>
+    {% endif %}
+
+    <main>
+      <a href="{{ path('games.new', {world: world.slug})}}" class="blur" title="new game" id="new_game">NEW GAME</a>
+
+      {% if games|length != 0 %}
+        <div id="games_wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>Name</th>
+                <th>Items</th>
+                <th>Created</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for game in games %}
+            <tr>
+              <td class="options_td">
+                <form method="POST" action="{{ path('games.delete', {world: world.slug, id: game.id}) }}" onsubmit="return confirm('Every item from this game will also be destroyed')">
+                    <input type='hidden' name="_method" value="DELETE" />
+                    <input type='hidden' name="_token" value="{{ csrf_token('delete' ~ game.id) }}" />
+                    <button class="delete" title="delete this game">
+                      <div class="stain_1"></div>
+                      <i class="material-icons">delete</i>
+                    </button>
+                </form>
+              </td>
+              <td class="options_td">
+                <a title="edit this game" href="{{ path('games.edit', {world: world.slug, game: game.slug}) }}">
+                  <i class="material-icons">edit</i>
+                  <div class="stain_2"></div>
+                </a>
+              </td>
+              <td style="font-family: 'printed';"><a class="dashboard_link" href="{{ path('sight', {world: world.slug, game: game.slug}) }}">{{ game.name }}</a></td>
+              <td style="font-family: 'printed';"><a class="dashboard_link" href="{{ path('sight', {world: world.slug, game: game.slug}) }}">{{ game.items }}</a></td>
+              <td style="font-family: 'printed';"><a class="dashboard_link" href="{{ path('sight', {world: world.slug, game: game.slug}) }}">{{ game.date|date('Y/m/d') }}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% endif %}
+    </main>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('JS/games.js')}}"></script>
+{% endblock %}

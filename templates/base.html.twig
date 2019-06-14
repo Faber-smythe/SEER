@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        {# META & CIE #}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SEER</title>
+        {# RESET #}
+        <link href="{{ asset('CSS/reset.css') }}" rel="stylesheet">
+        {# CDN STYLE #}
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        {# STYLESHEETS #}
+        <link href="{{ asset('CSS/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('CSS/form.css') }}" rel="stylesheet">
+        {# FAVICON #}
+
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        {% if anonymous is not defined %}
+          <div id="topleft">
+            <p class="username"><i class="material-icons">account_circle</i>{{user}}</p>
+            <a id="logout" title="logout" class="blur" href="{{ path('logout') }}">LOG OUT</a>
+            {% block topleft %}
+            {% endblock %}
+          </div>
+        {% endif %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+
+        {% endblock %}
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+        <script src="{{ asset('JS/underscore.js')}}"></script>
+    </body>
+</html>

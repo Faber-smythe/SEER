@@ -1,0 +1,133 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  position: relative;
+  z-index: 5;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form[name='world']{
+  margin-top: 25vh;
+  max-width: 75%;
+}
+label{
+  font-size: 1.1em;
+  margin-top: 15px !important;
+  margin-bottom: 5px !important;
+}
+form[name='world'] input{
+  font-family: 'printed';
+  background: transparent;
+  font-size: 1em;
+}
+.help-text{
+  margin-top: 5px;
+  font-size: 0.7em;
+}
+/**
+ *
+ * INDEX
+ */
+ #new_world{
+   align-self: flex-start;
+   position: absolute;
+   width: 120px;
+   text-align: center;
+ }
+#worlds_wrapper{
+  margin-top: 50px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.world_container{
+  position: relative;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.world_container h2{
+  position: absolute;
+  z-index: 4;
+  text-align: center;
+  font-family: 'Roboto', 'sans-serif';
+  color: #eee;
+  text-transform: capitalize;
+}
+.world_container .world_background{
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: brightness(0.7);
+  transition: 0.5s;
+}
+.world_container .world_link{
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+}
+.world_container .options{
+  position: absolute;
+  z-index: 6;
+  top: 3px;
+  right: 3px;
+  color: white;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+.world_container .settings, .world_container .delete{
+  padding: 4px;
+  border-radius: 2px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delete{
+  margin: 0px !important;
+  color: white;
+  max-width: none !important;
+  height: 38px !important;
+  width: 38px !important;
+  flex-grow: 1;
+}
+.material-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.world_container:hover h2{
+  opacity: 0;
+  transition: 0.5s;
+}
+.world_container:hover .world_background{
+  width: 110%;
+  height: 110%;
+  filter: brightness(0.9);
+}
+.world_container:hover .options{
+  opacity: 1;
+  transition: 0.5s;
+}
+.settings:hover, .delete:hover{
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  cursor: pointer;
+}

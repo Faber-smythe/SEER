@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+
+{% block head %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('CSS/worlds.css') }}">
+        {% endblock %}
+
+{% endblock %}
+{% block page_title %} Worlds {% endblock %}
+{% block body %}
+    <img class="home_filigrane" src="{{ asset('images/home_filigrane_2.png') }}"></img>
+    {% if worlds|length == 0 %}
+      <h1>No World yet<span id="underscore">_</span></h1>
+    {% else %}
+      <h1>Your Worlds<span id="underscore">_</span></h1>
+    {% endif %}
+
+    <main>
+      <a href="{{ path('worlds.new')}}" class="blur" title="new world" id="new_world">NEW WORLD</a>
+      <div id="worlds_wrapper">
+      {% for world in worlds %}
+        <div class="world_container">
+          <h2>{{world.name}}</h2>
+          <div class='options'>
+            <a class="settings" title="edit this world" href="{{ path('worlds.edit', {slug: world.slug})}}">
+              <i class="material-icons">settings</i>
+            </a>
+            <form method="POST" action="{{ path('worlds.delete', {id: world.id}) }}" onsubmit="return confirm('That will cause this world\'s destruction and all within')">
+                <input type='hidden' name="_method" value="DELETE" />
+                <input type='hidden' name="_token" value="{{ csrf_token('delete' ~ world.id) }}" />
+                <button class="delete" title="destroy this world"><i class="material-icons">delete</i></button>
+            </form>
+
+          </div>
+          <a class="world_link" href="{{ path('games.index', {world: world.slug})}}">
+          </a>
+          {% if (world.filename)|length < 1 %}
+          <div class="world_background" style="background-image:url('{{ asset('images/default_world.png') }}')"></div>
+          {% else %}
+          <div class="world_background" style="background-image: url('{{ vich_uploader_asset(world, imageFile) }}')"></div>
+          {% endif %}
+
+        </div>
+      {% endfor %}
+      </div>
+    </main>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('JS/worlds.js')}}"></script>
+{% endblock %}

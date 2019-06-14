@@ -1,0 +1,159 @@
+#pinning_menu{
+  position: absolute;
+  z-index: 25;
+  bottom: 0px;
+  align-self: flex-end;
+  width: 86vw;
+  height: 20vh;
+  display: flex;
+  align-items: flex-start;
+  transform-style: preserve-3d;
+  transform: scaleY(1.2) rotateX(60deg);
+  transform-origin: bottom;
+  overflow: hidden;
+}
+#desk_cover_container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 70vw;
+}
+#pin_bar_container{
+  display: flex;
+}
+#desk_cover{
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  background: url('/images/desk_cover.jpg') no-repeat top;
+  background-size: cover;
+}
+#pin_bar_wrapper{
+  position: relative;
+  width: 69vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#pin_bar{
+  display: flex;
+  max-width: none;
+  width: auto;
+}
+#blur_input{
+  position: absolute;
+  align-self: center;
+  right: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 100% / 70%;
+  background: radial-gradient(#d8be83, #997d3d);
+  border-bottom: 6px solid #594c2e;
+  transition: all ease 0.3s;
+}
+#blur_input i{
+  filter: blur(1.5px);
+  font-size: 2.2em;
+  transition: all ease 0.3s;
+}
+#blur_input:hover{
+  filter: brightness(1.15);
+}
+#blur_input i.unblur{
+  filter: blur(0px);
+}
+#sound_input{
+  position: absolute;
+  align-self: center;
+  right: 100px;
+  margin-top: 10px;
+  cursor: pointer;
+  height: 53px;
+  width: 63px;
+  border-radius: 100% / 70%;
+  background: radial-gradient(#d8be83, #997d3d);
+  border-bottom: 6px solid #594c2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.3s;
+}
+#sound_input span{
+  width: 80%;
+  height: 80%;
+  background: url('/images/sound_input.png') no-repeat center;
+  background-size: contain;
+  transition: all ease 0.3s;
+  filter: blur(1.5px);
+}
+#sound_input:hover{
+  filter: brightness(1.15);
+}
+#sound_input.sound_off span{
+  filter: blur(0px);
+}
+#sound_input, #blur_input{
+  box-shadow: 0px 0px 20px 10px rgb(46, 36, 24);
+}
+.pin_tab{
+  position: relative;
+  margin: 0px -10px;
+  padding: 15px 25px;
+  overflow: hidden;
+  width: 8.5vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex: 0 0 8vw;
+  background-size: cover !important;
+  transition: all ease 0.15s;
+}
+.pin_tab:first-of-type{
+  margin: 0px !important;
+}
+.pin_tab:hover{
+  cursor: pointer;
+  filter: brightness(1.15);
+}
+.pin_tab p{
+  display: inline-block;
+  transition: all ease 0.3s;
+  pointer-events: none;
+  font-size: 0.9em;
+}
+.pin_tab.active_tab{
+  filter: brightness(1.15);
+}
+.pin_tab:hover p.blured{
+  filter: blur(1px);
+}
+
+#pin_bar_shift_left, #pin_bar_shift_right{
+  position: relative;
+  opacity: 0;
+  z-index: 50;
+  font-size: 2em;
+  color: red;
+  padding: 5px;
+}
+#pin_bar_shift_left{
+  margin-right: -35px;
+}
+#pin_bar_shift_right{
+  margin-left: -35px;
+}
+.tab_pin_sign{
+  position: absolute;
+  z-index: 55;
+  bottom: 0px;
+  left: 2px;
+  padding: 0px 2px;
+  font-size: 1.1em;
+  transition: all ease 0.3s;
+}
+.tab_pin_sign:hover{
+  background: rgba(180, 145, 109, 0.7);
+  box-shadow: 0px 0px 16px 7px rgb(180, 145, 109);
+}

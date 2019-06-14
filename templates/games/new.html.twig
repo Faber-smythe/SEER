@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block head %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('CSS/games.css') }}">
+        {% endblock %}
+
+{% endblock %}
+{% block page_title %} New Game in {{ world.name }} {% endblock %}
+
+{% block topleft %}
+<a href="{{ path('games.index', {world: world.slug}) }}" title="back" class='blur'>CANCEL</a>
+{% endblock %}
+{% block body %}
+
+    <img class="home_filigrane" src="{{ asset('images/home_filigrane_3.png') }}"></img>
+    <main style="margin-top: 25vh;">
+
+        {{ form_start(form) }}
+
+
+          {{ form_label(form.name) }}
+          {{ form_errors(form.name) }}
+          {{ form_widget(form.name) }}
+          {{ form_help(form.name) }}
+          {{ form_label(form.codex) }}
+          {{ form_errors(form.codex) }}
+          {{ form_widget(form.codex) }}
+          {{ form_help(form.codex) }}
+
+          <button  class="blur form_submit">create</button>
+
+        {{ form_end(form) }}
+
+    </main>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('JS/games.js')}}"></script>
+{% endblock %}

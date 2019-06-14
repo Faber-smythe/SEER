@@ -1,0 +1,69 @@
+body{
+  font-family: "printed";
+  background: url("img/paper_background.jpg") no-repeat center;
+  background-size: cover;
+  color: #262626;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#demo_logins{
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  opacity: 0.5;
+}
+h1{
+  font-size: 6em !important;
+  text-align: center !important;
+  margin: 40px 0px !important;
+}
+main{
+  position: relative;
+  z-index: 5;
+  width: 75%;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+h2{
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+#form_row{
+  position: relative;
+  width: 100%;
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+form{
+  height: 100%;
+  width: 20%;
+}
+form label{
+  text-transform: capitalize;
+}
+#checkbox_row label{
+  font-size: 0.8em;
+}
+
+.checkbox_wrapper{
+  margin: 5px;
+}
+.checkbox_wrapper #remember_me:hover{
+  cursor: pointer;
+}
+
+/**
+** FONT-FACE
+**/
+@font-face{
+    font-family: "printed";
+    src: url("fonts/fucked_olympia.svg") format("svg"),
+        url("fonts/fucked_olympia.woff") format("woff"),
+        url("fonts/fucked_olympia.woff2") format("woff2"),
+        url("fonts/fucked_olympia.ttf") format("ttf"),
+        url("fonts/fucked_olympia.otf") format("otf");
+}

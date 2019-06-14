@@ -1,0 +1,311 @@
+/* GENERAL TOOLS */
+.blured{
+  filter: blur(4px);
+}
+.blured:hover{
+  filter:blur(1px);
+}
+
+.loading_sign{
+  margin: 20px;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  background: linear-gradient(#ceac8b, #e7d3be, #e7d3be, #e7d3be, #ceac8b)
+}
+
+/* SKELETON */
+html{
+  height: 100vh;
+  width: 100vw;
+  background: black;
+}
+body{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('/images/background.jpg') no-repeat right;
+  background-size: cover;
+  font-family: 'printed';
+  overflow: hidden;
+}
+input:focus, textarea:focus{
+  outline: none;
+}
+/* LIGHTS */
+.animated_lights#fireplace{
+  background: url('/images/fireplace_light.png') no-repeat center right;
+  animation-name: fireplace_flickers;
+}
+.animated_lights#left_candle{
+  background: url('/images/left_candle_light.png') no-repeat center right;
+  animation-name: left_candle_flickers;
+}
+.animated_lights#right_candle{
+  background: url('/images/right_candle_light.png') no-repeat center right;
+  animation-name: right_candle_flickers;
+}
+.animated_lights{
+  pointer-events: none;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover !important;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+/* SPREADING STYLE */
+#topleft{
+  background: url('/images/display_background.png') no-repeat center;
+  background-size: cover;
+}
+#topleft a{
+  height: 18px;
+}
+#root{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#react_container{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 45cm;
+  perspective-origin: top right;
+}
+#react_container hr{
+  width: 60%;
+}
+#display{
+  position: absolute;
+  z-index: 30;
+  top: 1vh;
+  height: 80vh;
+  width: 70vw;
+  background: rgba(120, 120, 120, 0.3);
+  transform-origin: bottom center;
+  transition: all ease 0.3s;
+  font-family: 'printed';
+  transform: scale(0.001) rotate3d(1, -1, 0, 90deg);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/images/display_background.png') no-repeat center;
+  background-size: cover;
+}
+#display hr{
+  margin: 25px 0px;
+  align-self: center;
+}
+#fold_display_input{
+  left: 60px;
+}
+#fullscreen_input{
+  left: 100px;
+}
+#fold_display_input, #fullscreen_input{
+  position: absolute;
+  z-index: 150;
+  top: 10px;
+  font-size: 3em;
+  filter: blur(0px);
+  transition: all ease 0.3s;
+  transform-origin: center;
+}
+#fold_display_input:hover, #fullscreen_input:hover{
+  opacity: 0.3;
+  cursor: pointer;
+}
+#display h2{
+  margin-top: 20px;
+  text-align: center;
+  transition: all ease 0.3s;
+  display: flex;
+  align-self: center;
+}
+#display h2.blured:hover{
+  filter: blur(1px);
+}
+
+.scroll_content_wrapper{
+  height: 80% !important;
+  width: 90% !important;
+  padding: 0 2%;
+  margin: 3% 0;
+}
+#show_content{
+  position: absolute;
+  width: 90%;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto';
+  margin: 20px;
+}
+#content_topright{
+  position: fixed;
+  top: 4vh;
+  right: 27vw;
+  font-family: 'printed';
+  font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#content_topright label{
+  margin: 0px 10px;
+}
+#content_topright .delete_input{
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 1.2em;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+#content_topright .delete_input:hover{
+  opacity: 0.3;
+}
+
+.blinking_dots{
+  animation-name: blinking_dots;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+}
+
+
+
+
+
+/* KEYFRAMES */
+@keyframes blinking_dots {
+  from {
+    opacity: 0;
+  }
+  30%{opacity: 1;}
+  80%{opacity: 1;}
+
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fireplace_flickers {
+  from {
+    opacity: 0.35;
+  }
+  3%{opacity: 0.4;}
+  6%{opacity: 0.35;}
+  9%{opacity: 0.5;}
+  12%{opacity: 0.5;}
+  15%{opacity: 0.4;}
+  18%{opacity: 0.35;}
+  21%{opacity: 0.5;}
+  24%{opacity: 0.35;}
+  27%{opacity: 0.5;}
+  30%{opacity: 0.35;}
+  33%{opacity: 0.5;}
+  36%{opacity: 0.5;}
+  39%{opacity: 0.35;}
+  42%{opacity: 0.5;}
+  45%{opacity: 0.35;}
+  48%{opacity: 0.5;}
+  51%{opacity: 0.35;}
+  54%{opacity: 0.5;}
+  57%{opacity: 0.2;}
+  60%{opacity: 0.4;}
+  63%{opacity: 0.5;}
+  66%{opacity: 0.35;}
+  69%{opacity: 0.5;}
+  72%{opacity: 0.35;}
+  75%{opacity: 0.5;}
+  78%{opacity: 0.4;}
+  81%{opacity: 0.5;}
+  84%{opacity: 0.35;}
+  87%{opacity: 0.2;}
+  90%{opacity: 0.4;}
+  93%{opacity: 0.2;}
+  96%{opacity: 0.35;}
+
+  to {
+    opacity: 0.35;
+  }
+}
+
+@keyframes left_candle_flickers {
+  from {
+    opacity: 0.3;
+  }
+  5%{opacity: 0.4;}
+  7%{opacity: 0.4;}
+  14%{opacity: 0.45;}
+  17%{opacity: 0.4;}
+  20%{opacity: 0.3;}
+  23%{opacity: 0.45;}
+  26%{opacity: 0.4;}
+  31%{opacity: 0.3;}
+  35%{opacity: 0.45;}
+  41%{opacity: 0.4;}
+  44%{opacity: 0.45;}
+  47%{opacity: 0.3;}
+  50%{opacity: 0.45;}
+  53%{opacity: 0.4;}
+  59%{opacity: 0.3;}
+  62%{opacity: 0.4;}
+  65%{opacity: 0.45;}
+  68%{opacity: 0.4;}
+  71%{opacity: 0.45;}
+  74%{opacity: 0.3;}
+  77%{opacity: 0.45;}
+  80%{opacity: 0.4;}
+  86%{opacity: 0.4;}
+  89%{opacity: 0.3;}
+  92%{opacity: 0.4;}
+  95%{opacity: 0.3;}
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes right_candle_flickers {
+  from {
+    opacity: 0.4;
+  }
+  7%{opacity: 0.3;}
+  14%{opacity: 0.4;}
+  20%{opacity: 0.3;}
+  23%{opacity: 0.4;}
+  31%{opacity: 0.3;}
+  35%{opacity: 0.3;}
+  41%{opacity: 0.4;}
+  44%{opacity: 0.4;}
+  47%{opacity: 0.3;}
+  53%{opacity: 0.4;}
+  59%{opacity: 0.3;}
+  62%{opacity: 0.4;}
+  65%{opacity: 0.4;}
+  71%{opacity: 0.3;}
+  74%{opacity: 0.3;}
+  77%{opacity: 0.4;}
+  80%{opacity: 0.4;}
+  86%{opacity: 0.3;}
+  92%{opacity: 0.4;}
+  95%{opacity: 0.3;}
+
+  to {
+    opacity: 0.3;
+  }
+}

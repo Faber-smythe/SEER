@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+
+{% block head %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('CSS/login.css') }}">
+        {% endblock %}
+
+{% endblock %}
+{% block title %}Log in{% endblock %}
+{% block page_title %} Log in {% endblock %}
+
+{% block body %}
+  <img id="home_filigrane" src="{{ asset('images/home_filigrane.png') }}"></img>
+  <main>
+    <h1>TEST<span id="underscore">_</span></h1>
+  
+  </main>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('JS/login.js')}}"></script>
+{% endblock %}

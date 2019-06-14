@@ -1,0 +1,19 @@
+<main>
+
+    {{ form_start(form) }}
+
+
+      {{ form_label(form.name) }}
+      {{ form_errors(form.name) }}
+      {{ form_widget(form.name) }}
+      {{ form_help(form.name) }}
+      {{ form_label(form.imageFile) }}
+      {{ form_errors(form.imageFile) }}
+      {{ form_widget(form.imageFile) }}
+      {{ form_help(form.imageFile) }}
+
+      <button  class="blur form_submit">{{ submit_label }}</button>
+
+    {{ form_end(form) }}
+
+</main>

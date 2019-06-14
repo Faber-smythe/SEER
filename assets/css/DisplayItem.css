@@ -1,0 +1,19 @@
+
+#show_content[data-content='pin'] h2{
+  margin-top: 20px;
+  text-align: center;
+  transition: all ease 0.3s;
+  display: flex;
+  align-self: center;
+  padding: 5px;
+}
+#show_content[data-content='pin'] h2.blured:hover{
+  filter: blur(1px);
+}
+#show_content[data-content='pin'] pre{
+  width: 96%;
+  padding: 2%;
+  white-space: pre-wrap;
+  text-indent: 3em;
+  line-height: 1.5;
+}

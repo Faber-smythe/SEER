@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+
+{% block head %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('CSS/login.css') }}">
+        {% endblock %}
+
+{% endblock %}
+{% block title %}Log in{% endblock %}
+{% block page_title %} Log in {% endblock %}
+
+{% block body %}
+  <img class="home_filigrane" src="{{ asset('images/home_filigrane.png') }}"></img>
+  <main>
+  <p id="demo_logins">Tutorial account with username "newbie" and password "demo"</p>
+  <h1>SEER<span id="underscore">_</span></h1>
+  {% if newuser is not empty %}
+    <p style="position: relative; z-index: 5;">
+      You have successfuly registered under the name {{newuser}}. Nobody else than you know your password.
+    </p>
+  {% endif %}
+  {% if error %}
+    <p>{{ error.messageKey }}</p>
+  {% endif %}
+    <div id="form_row">
+      <form action="{{ path('login') }}" name="logging_form" method="post">
+      <h2>Sign in</h2>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="_username" class="form-control" value="{{ last_username }}">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="_password" class="form-control">
+        <div id="checkbox_row">
+          <input type="checkbox" id="remember_me" name="_remember_me" checked/>
+          <label for="remember_me">Remember me</label>
+        </div>
+        <button type="submit" class="blur form_submit">Loging in</button>
+      </form>
+      <span style="position: absolute">OR</span>
+      {{ form_start(registrationForm, {'action': path('register')} ) }}
+        <h2>Sign up</h2>
+        {{ form_label(registrationForm.username) }}
+        {{ form_errors(registrationForm.username) }}
+        {{ form_widget(registrationForm.username) }}
+        {{ form_help(registrationForm.username) }}
+        {{ form_label(registrationForm.plainPassword) }}
+        {{ form_errors(registrationForm.plainPassword) }}
+        {{ form_widget(registrationForm.plainPassword) }}
+        {{ form_help(registrationForm.plainPassword) }}
+
+        <button class="blur form_submit">Register</button>
+      {{ form_end(registrationForm) }}
+    </div>
+  </main>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('JS/login.js')}}"></script>
+{% endblock %}

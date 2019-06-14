@@ -1,0 +1,131 @@
+#show_content[data-content='menu'] h2{
+  font-size: 2em;
+  font-family: 'printed';
+  font-weight: 700;
+}
+#show_content[data-content='menu'] table{
+  width: 85%;
+}
+#show_content[data-content='menu'] th{
+  line-height: 2;
+  font-style: italic;
+}
+#show_content[data-content='menu'] tr{
+  position: relative;
+}
+#show_content[data-content='menu'] td{
+  position: relative;
+  overflow: hidden;
+}
+#show_content[data-content='menu'] p.excuses{
+  width: 90%;
+  line-height: 1.5;
+  font-family: 'printed';
+}
+.checkbox_td{
+  position: relative;
+  text-align: center;
+}
+#show_content[data-content='menu'] tbody tr:hover, #show_content[data-content='menu'] tbody input:hover{
+  cursor: pointer;
+}
+#show_content[data-content='menu'] tbody input{
+  height: 20px;
+  width: 20px;
+}
+.title_excerpt{
+  width: 15vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.content_excerpt{
+  width: 25vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.delete_td{
+  text-align: center;
+}
+.delete_td i{
+  padding: 0px 5px;
+  font-size: 1.2em;
+  transition: all ease 0.3s;
+}
+.delete_td:hover i{
+  opacity: 0.3;
+}
+.checkbox_wrapper, .delete_td i{
+  margin-bottom: -3px;
+}
+#searchbar{
+  align-self: flex-end;
+  padding: 0px;
+}
+
+/* -----------
+/* FORM STYLE
+/* ---------- */
+
+form{
+ position: relative;
+ width: 95%;
+}
+.form_row{
+  display: flex;
+  margin: 15px 0px;
+}
+#div_for_pinned_input{
+  font-family: 'printed';
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+#div_for_pinned_input .checkbox_wrapper{
+  margin-left: 10px;
+}
+#div_for_pinned_input:hover .checkmark{
+  border: 1px solid rgba(10, 10, 10, 0.7);
+}
+input[type="checkbox"]:hover, label:hover{
+  cursor: pointer;
+}
+input, textarea{
+ font-family: 'Roboto';
+ background: rgba(255, 255, 255, 0.3);
+ font-size: 1.1em;
+ padding: 5px;
+ cursor: text;
+}
+::placeholder{
+  font-family: 'printed';
+}
+input{
+ max-width: 200px;
+}
+
+textarea{
+  min-height: 60vh;
+  width: 99% !important;
+}
+.form_submit{
+  position: fixed;
+  top: -15px;
+  margin-left: 30vw;
+  font-size: 1.5em !important;
+  filter: blur(0px);
+}
+.form_submit:hover{
+  font-size: 1.6em !important;
+  filter: blur(1px);
+}
+.clear_form{
+  font-size: 1.5em !important;
+  filter: blur(0px);
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.clear_form:hover{
+  opacity: 0.3;
+}

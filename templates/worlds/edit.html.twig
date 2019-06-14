@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+
+{% block head %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('CSS/worlds.css') }}">
+        {% endblock %}
+
+{% endblock %}
+{% block page_title %} Edit {{world.name}} {% endblock %}
+
+{% block topleft %}
+<a href="{{ path('worlds.index') }}" title="back" class='blur'>CANCEL</a>
+{% endblock %}
+{% block body %}
+
+    <img class="home_filigrane" src="{{ asset('images/home_filigrane_2.png') }}"></img>
+    {{ include('worlds/_form.html.twig', {form:form, submit_label: 'edit'}) }}
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('JS/worlds.js')}}"></script>
+{% endblock %}
