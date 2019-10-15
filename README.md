@@ -30,6 +30,6 @@ $ php bin/console server:run
 #### (Attention, certains anti-virus peuvent entrer en conflit avec le serveur local)
 ### > Dans une autre console, mettre en route la compilation automatique via : 
 ```
-$ yarn run encore dev--watch
+$ yarn run encore dev --watch
 ```
 ### > Ouvrir une page sur le port 8000
