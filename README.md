@@ -11,7 +11,7 @@
 ## Etapes
 ### > Git clone
 ### > Configurer le .env
-### > npm install pour télécharger les dépendances
+### > composer install puis npm install télécharger les dépendances
 ### > Lancer le serveur via 
 ```
 $ php bin/console server:run
