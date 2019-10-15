@@ -19,6 +19,10 @@ $ composer install
 ```
 $ yarn add --dev @symfony/webpack-encore
 ```
+### > Créer les tables de la base de données avec :
+```
+$ php bin/console doctrine:migrations:migrate
+```
 ### > Lancer le serveur dans une console via :
 ```
 $ php bin/console server:run
