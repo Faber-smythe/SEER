@@ -10,9 +10,16 @@
 ### Avoir installé Node.js
 ## Etapes
 ### > Git clone
-### > Configurer le .env
-### > composer install puis npm install pour télécharger les dépendances
-### > Lancer le serveur via 
+### > Configurer le .env (identifiants de connexion à la base de donnée)
+### > Installer les dépendances de Symfony avec :
+```
+$ composer install
+```
+### > Installer Webpack Encore avec :
+```
+$ yarn add --dev @symfony/webpack-encore
+```
+### > Lancer le serveur dans une console via :
 ```
 $ php bin/console server:run
 ```
